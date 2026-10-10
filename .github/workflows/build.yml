@@ -22,19 +22,29 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      # Install Gradle 8.14.2 and put it first in PATH
+      - name: Install Gradle 8.14.2
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.14.2-bin.zip
+          unzip -q gradle-8.14.2-bin.zip -d /opt
+          echo "/opt/gradle-8.14.2/bin" >> $GITHUB_PATH
+
+      # Remove any old platform folder so we start clean
+      - name: Clean platform
+        run: rm -rf platforms/android
+
       - name: Install Cordova
         run: npm install -g cordova
 
       - name: Install project dependencies
         run: npm install
 
-      - name: Install Android SDK components
-        run: |
-          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
-          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+      - name: Accept Android licenses
+        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
+      # Use Cordova Android 15.1.0 (has Gradle 9 fix, but we use Gradle 8 anyway)
       - name: Add Android platform
-        run: cordova platform add android@12
+        run: cordova platform add android@15.1.0
 
       - name: Build APK
         run: cordova build android
