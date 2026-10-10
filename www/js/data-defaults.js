@@ -1,0 +1,52 @@
+'use strict';
+
+function defaultCats(){
+  return [
+    {key:'nawm',        ar:'أذكار النوم والاستيقاظ', en:'Sleep & Waking',  color:'#5c6bc0', icon:'sleep'},
+    {key:'wudu',        ar:'أذكار الوضوء والخلاء',   en:'Wudu & Restroom', color:'#26a69a', icon:'wudu'},
+    {key:'masjid',      ar:'أذكار المسجد والأذان',   en:'Mosque & Athan',  color:'#66bb6a', icon:'mosque'},
+    {key:'salah',       ar:'أذكار داخل الصلاة',       en:'During Prayer',   color:'#42a5f5', icon:'prayer'},
+    {key:'salah_after', ar:'أذكار بعد الصلاة',        en:'After Prayer',    color:'#7e57c2', icon:'hand-heart'},
+    {key:'sabah',       ar:'أذكار الصباح',           en:'Morning',         color:'#ffa726', icon:'sunrise'},
+    {key:'masaa',       ar:'أذكار المساء',           en:'Evening',         color:'#8d6e63', icon:'sunset'},
+    {key:'duaa',        ar:'دعاء',                  en:"Du'a",            color:'#ef5350', icon:'dua'},
+    {key:'dhikr',       ar:'الباقيات الصالحات',                 en:'Everlasting Good Deeds',          color:'#f5a623', icon:'tasbih'},
+    {key:'food',        ar:'أذكار الطعام',           en:'Food & Drink',    color:'#9ccc65', icon:'utensils'},
+    {key:'travel',      ar:'أذكار السفر',            en:'Travel',          color:'#29b6f6', icon:'plane'},
+    {key:'hajj',        ar:'الحج',                  en:'Hajj',            color:'#ab47bc', icon:'kaaba'},
+    {key:'sickness',    ar:'أذكار المرض',            en:'Sickness',        color:'#ec407a', icon:'sick'},
+    {key:'janazah',     ar:'أذكار الجنازة',          en:'Funeral',         color:'#78909c', icon:'coffin'},
+    {key:'clothing',    ar:'أذكار اللباس',           en:'Clothing',        color:'#d4e157', icon:'cloth'},
+    {key:'home',        ar:'أذكار المنزل',           en:'Home',            color:'#ffca28', icon:'home'},    {key:'fear', ar:'الخوف والقلق', en:'Fear & Anxiety', color:'#ef5350', icon:'circle-dot'},
+    {key:'protection', ar:'الحماية', en:'Protection', color:'#ab47bc', icon:'hand-heart'},
+    {key:'weather', ar:'الطقس والمطر', en:'Weather', color:'#29b6f6', icon:'sunrise'},
+    {key:'family', ar:'الأسرة', en:'Family', color:'#ec407a', icon:'home'},
+    {key:'manners', ar:'الآداب', en:'Manners', color:'#66bb6a', icon:'mosque'},
+    {key:'salawat', ar:'الصلاة على النبي', en:'Salawat', color:'#ffa726', icon:'sunset'},
+    {key:'rizq', ar:'الرزق', en:'Wealth', color:'#a6e3a1', icon:'money-bag'}
+  ];
+}
+
+function defaultData(){
+  return [
+
+    {id:115,categories:['salah_after'],tags:['salah_after:after-fard','freq:daily','ctx:time','len:short'],situation:'دبر الصلاة المكتوبة',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ أَنْتَ السَّلاَمُ وَمِنْكَ السَّلاَمُ، تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَالإِكْرَامِ',hadith:'رواه مسلم برقم ٥٩١',virtue:null},
+    {id:125,categories:['salah'],tags:['salah:ruku','freq:daily','ctx:action','len:medium'],situation:'في الركوع والسجود',repeat:1,reliability:'sahih',transliteration:'',arabic:'سُبُّوحٌ، قُدُّوسٌ، رَبُّ الْمَلَائِكَةِ وَالرُّوحِ',hadith:'رواه مسلم برقم ٤٨٧',virtue:null},
+    {id:126,categories:['salah'],tags:['salah:sujud','freq:daily','ctx:action','len:medium'],situation:'في السجود',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ اغْفِرْ لِي ذَنْبِي كُلَّهُ: دِقَّهُ وَجِلَّهُ، وَأَوَّلَهُ وَآخِرَهُ، وَعَلَانِيَتَهُ وَسِرَّهُ',hadith:'رواه مسلم برقم ٤٨٣',virtue:null},
+    {id:131,categories:['nawm'],tags:['nawm:sleep','freq:daily','ctx:time','len:medium'],situation:'قبل النوم',repeat:1,reliability:'sahih',transliteration:'',arabic:'الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا، وَكَفَانَا وَآوَانَا، فَكَمْ مِمَّنْ لَا كَافِيَ لَهُ وَلَا مُؤْوِيَ',hadith:'رواه مسلم برقم ٢٧١٥',virtue:null},
+    {id:143,categories:['masjid'],tags:['masjid:entering','freq:daily','ctx:place','len:short'],situation:'عند دخول المسجد',repeat:1,reliability:'sahih',transliteration:'',arabic:'أَعُوذُ بِاللَّهِ الْعَظِيمِ وَبِوَجْهِهِ الْكَرِيمِ وَسُلْطَانِهِ الْقَدِيمِ مِنَ الشَّيْطَانِ الرَّجِيمِ — بِسْمِ اللَّهِ وَالصَّلَاةُ وَالسَّلَامُ عَلَى رَسُولِ اللَّهِ — اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ',hadith:'رواه أبو داود برقم ٤٦٦ ومسلم برقم ٧١٣',virtue:'حفظ من الشيطان سائر اليوم'},
+    {id:146,categories:['fear'],tags:['fear:anxiety','freq:occasion','ctx:emotion','len:medium'],situation:'عند الهم والحزن',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ وَالْعَجْزِ وَالْكَسَلِ وَالْبُخْلِ وَالْجُبْنِ وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ',hadith:'رواه البخاري برقم ٢٨٩٣',virtue:null},
+    {id:147,categories:['masjid'],tags:['masjid:athan','freq:daily','ctx:place','len:short'],situation:'عند سماع الأذان',repeat:1,reliability:'sahih',transliteration:'',arabic:'يقول مثل ما يقول المؤذن إلا في (حي على الصلاة) و(حي على الفلاح) فيقول: لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',hadith:'رواه البخاري برقم ٦١١ ومسلم برقم ٣٨٥',virtue:'من قال ذلك من قلبه دخل الجنة'},
+    {id:148,categories:['masjid'],tags:['masjid:athan','freq:daily','ctx:place','len:short'],situation:'بعد الأذان',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ وَالصَّلَاةِ الْقَائِمَةِ آتِ مُحَمَّداً الْوَسِيلَةَ وَالْفَضِيلَةَ وَابْعَثْهُ مَقَاماً مَحْمُوداً الَّذِي وَعَدْتَهُ',hadith:'رواه البخاري برقم ٦١٤',virtue:'حلت له شفاعتي يوم القيامة'},
+    {id:154,categories:['duaa'],tags:['duaa:sin','freq:occasion','ctx:emotion','len:medium'],situation:null,repeat:1,reliability:'sahih',transliteration:'',arabic:'رَبِّ اغْفِرْ لِي وَتُبْ عَلَيَّ إِنَّكَ أَنْتَ التَّوَّابُ الرَّحِيمُ',hadith:'رواه أبو داود (1516)',virtue:'كان النبي ﷺ يقولها مائة مرة في المجلس'},
+    {id:155,categories:['duaa'],tags:['duaa:praise','freq:occasion','ctx:emotion','len:medium'],situation:null,repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى',hadith:'رواه مسلم (2721)',virtue:'جوامع الدعاء — الهداية والتقوى والعفاف والغنى'},
+    {id:158,categories:['nawm'],tags:['nawm:sleep','freq:daily','ctx:time','len:medium'],situation:'قبل النوم',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْبَرَصِ، وَالْجُنُونِ، وَالْجُذَامِ، وَسَيِّئِ الْأَسْقَامِ',hadith:'رواه أبو داود (1554) — حسنه الألباني',virtue:null},
+    {id:159,categories:['duaa'],tags:['duaa:mishap','freq:occasion','ctx:emotion','len:medium'],situation:'دعاء الاستنصار والتحصين — عند الظلم والحسد وضيق الصدر',repeat:1,reliability:'sahih',transliteration:'',arabic:'رَبِّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ، وَانْصُرْنِي وَلَا تَنْصُرْ عَلَيَّ، وَامْكُرْ لِي وَلَا تَمْكُرْ عَلَيَّ، وَاهْدِنِي وَيَسِّرِ الْهُدَى لِي، وَانْصُرْنِي عَلَى مَنْ بَغَى عَلَيَّ. اللَّهُمَّ اجْعَلْنِي لَكَ شَاكِرًا، لَكَ ذَاكِرًا، لَكَ رَاهِبًا، لَكَ مِطْوَاعًا، لَكَ مُخْبِتًا، إِلَيْكَ أَوَّاهًا مُنِيبًا. رَبِّ تَقَبَّلْ تَوْبَتِي، وَاغْسِلْ حَوْبَتِي، وَأَجِبْ دَعْوَتِي، وَثَبِّتْ حُجَّتِي، وَسَدِّدْ لِسَانِي، وَاهْدِ قَلْبِي، وَاسْلُلْ سَخِيمَةَ صَدْرِي',hadith:'رواه الترمذي (3551) وأبو داود (1510) — حسنه الألباني',virtue:'عند الشعور بالظلم أو الاستضعاف، للحسد وضيق الصدر'},
+    {id:160,categories:['duaa'],tags:['duaa:debt','freq:occasion','ctx:emotion','len:medium'],situation:'دعاء قضاء الدين وسعة الرزق',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَنْ تَشَاءُ، وَتَنْزِعُ الْمُلْكَ مِمَّنْ تَشَاءُ، وَتُعِزُّ مَنْ تَشَاءُ، وَتُذِلُّ مَنْ تَشَاءُ، بِيَدِكَ الْخَيْرُ إِنَّكَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ. رَحْمَنَ الدُّنْيَا وَالْآخِرَةِ وَرَحِيمَهُمَا، تُعْطِيهِمَا مَنْ تَشَاءُ، وَتَمْنَعُ مِنْهُمَا مَنْ تَشَاءُ، ارْحَمْنِي رَحْمَةً تُغْنِينِي بِهَا عَنْ رَحْمَةِ مَنْ سِوَاكَ',hadith:'رواه الترمذي (3553) والطبراني — صححه الألباني',virtue:'علّمه النبي ﷺ لمعاذ بن جبل لقضاء الدين وسعة الرزق'},
+    {id:161,categories:['salah'],tags:['salah:hajah','freq:daily','ctx:action','len:medium'],situation:'صلاة الحاجة',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ وَأَتَوَجَّهُ إِلَيْكَ بِنَبِيِّكَ مُحَمَّدٍ نَبِيِّ الرَّحْمَةِ، إِنِّي تَوَجَّهْتُ بِكَ إِلَى رَبِّي فِي حَاجَتِي هَذِهِ لِتُقْضَى لِي، اللَّهُمَّ فَشَفِّعْهُ فِيَّ',hadith:'رواه الترمذي (3578) وابن ماجه (1385) — صححه الألباني',virtue:'دعاء صلاة الحاجة — تصلّي ركعتين ثم تدعو بهذا بعد التسليم'},
+    {id:163,categories:['sickness'],tags:['sickness:patient','freq:emergency','ctx:emotion','len:short'],situation:'الدعاء للمريض',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ رَبَّ النَّاسِ، مُذْهِبَ الْبَاسِ، اشْفِ أَنْتَ الشَّافِي، لَا شَافِيَ إِلَّا أَنْتَ، اشْفِهِ شِفَاءً لَا يُغَادِرُ سَقَمًا',hadith:'رواه البخاري (5742) عن أنس بن مالك',virtue:'دعاء الرقية للمريض — كان النبي ﷺ يدعو به للمريض'},
+
+    {id:164,categories:['rizq'],tags:['rizq:general','freq:occasion','ctx:emotion','len:short'],situation:'طلب الرزق والرحمة',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ وَرَحْمَتِكَ، فَإِنَّهُ لَا يَمْلِكُهَا إِلَّا أَنْتَ',hadith:"Sahih Muslim 713 (short); Al-Mu'jam al-Kabir 10/220; Sahih al-Jami' 1278",virtue:null},
+    {id:165,categories:['rizq'],tags:['rizq:general','freq:daily','ctx:emotion','len:long'],situation:'الاستعاذة من العجز والكسل',repeat:1,reliability:'sahih',transliteration:'',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ، وَالْجُبْنِ وَالْبُخْلِ، وَالْهَرَمِ، وَعَذَابِ الْقَبْرِ، اللَّهُمَّ آتِ نَفْسِي تَقْوَاهَا، وَزَكِّهَا أَنْتَ خَيْرُ مَنْ زَكَّاهَا، أَنْتَ وَلِيُّهَا وَمَوْلَاهَا، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عِلْمٍ لَا يَنْفَعُ، وَمِنْ قَلْبٍ لَا يَخْشَعُ، وَمِنْ نَفْسٍ لَا تَشْبَعُ، وَمِنْ دَعْوَةٍ لَا يُسْتَجَابُ لَهَا',hadith:'Sahih Muslim 2722',virtue:null}
+  ];
+}

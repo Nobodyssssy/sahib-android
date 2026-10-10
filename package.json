@@ -1,0 +1,15 @@
+{
+  "name": "sahib-android",
+  "displayName": "Sahib",
+  "version": "1.0.0",
+  "description": "Offline-first Islamic companion",
+  "devDependencies": {
+    "cordova": "^12.0.0",
+    "cordova-android": "^13.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  }
+}

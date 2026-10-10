@@ -1,0 +1,484 @@
+/* ═══════════════════════════════════════════════════════════
+   ADKAR CARD
+   ═══════════════════════════════════════════════════════════ */
+.adkar-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all var(--tr);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 0;
+}
+.adkar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--cc, var(--accent));
+}
+.adkar-card:hover {
+  border-color: var(--cc, var(--accent));
+  transform: translateX(-2px);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--cc) 25%, transparent);
+}
+.adkar-card:focus-within {
+  border-color: var(--cc, var(--accent));
+}
+.adkar-card.fav-glow {
+  border-color: var(--accent);
+}
+
+.adkar-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.adkar-situation {
+  font-size: 11px;
+  color: var(--text3);
+  font-weight: 600;
+  direction: rtl;
+  text-align: right;
+}
+.adkar-text {
+  font-family: 'Amiri', serif;
+  font-size: 17px;
+  line-height: 1.8;
+  direction: rtl;
+  text-align: right;
+  color: var(--text);
+}
+.adkar-translit {
+  font-size: 11px;
+  color: var(--text3);
+  font-style: italic;
+  direction: ltr;
+  text-align: left;
+}
+.adkar-badges {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 50px;
+  border: 1px solid;
+}
+.badge-repeat {
+  background: var(--glow);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.badge-sahih {
+  background: rgba(76, 175, 137, .12);
+  border-color: var(--green);
+  color: var(--green);
+}
+.badge-hasan {
+  background: rgba(76, 127, 201, .12);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+.badge-daif {
+  background: rgba(201, 76, 76, .12);
+  border-color: var(--red);
+  color: var(--red);
+}
+.badge-tag {
+  background: var(--surface2);
+  border-color: var(--border);
+  color: var(--text3);
+}
+
+.adkar-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+.adkar-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.adkar-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text3);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--tr);
+  position: relative;
+  opacity: .55;
+}
+.adkar-btn::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+}
+.adkar-btn svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+.adkar-card:hover .adkar-btn,
+.adkar-card:focus-within .adkar-btn,
+.adkar-btn:hover,
+.adkar-btn:focus-visible {
+  opacity: 1;
+}
+.adkar-btn:hover,
+.adkar-btn:focus-visible {
+  background: var(--surface2);
+  border-color: var(--border);
+}
+.adkar-btn.fav.on {
+  opacity: 1;
+  color: var(--accent2);
+  border-color: var(--accent2);
+  background: color-mix(in srgb, var(--accent2) 10%, transparent);
+}
+.adkar-btn.fav.on svg {
+  fill: var(--accent2);
+}
+.adkar-btn.fav:hover {
+  color: var(--accent2);
+  border-color: var(--accent2);
+}
+.adkar-btn.edit:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+  background: rgba(76, 127, 201, .1);
+}
+.adkar-btn.del:hover {
+  color: var(--red);
+  border-color: var(--red);
+  background: rgba(201, 76, 76, .1);
+}
+
+.adkar-empty {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--text3);
+}
+.adkar-empty-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SEARCH RESULT CARD
+   ═══════════════════════════════════════════════════════════ */
+.search-result-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rs);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all var(--tr);
+  position: relative;
+  overflow: hidden;
+}
+.search-result-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--cc, var(--accent));
+}
+.search-result-card:hover {
+  border-color: var(--accent);
+  transform: translateX(-2px);
+}
+.src-cat-label {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.src-situation {
+  font-size: 11px;
+  color: var(--text3);
+  margin-bottom: 5px;
+  font-style: italic;
+}
+.src-text {
+  font-family: 'Amiri', serif;
+  font-size: 16px;
+  line-height: 1.8;
+  direction: rtl;
+  text-align: right;
+}
+
+.adkar-tagbar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 0 0 6px;
+}
+.adkar-group-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 2px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .04em;
+}
+.adkar-group-head::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.adkar-group-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Session & Adkar palette
+
+   Rule:
+     idle  → var(--accent)   (follows user theme selection)
+     done  → var(--ctp-green) (semantic, always green)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Session tap button — accent idle, green done ── */
+.session-tap-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: var(--on-accent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
+  transition: background var(--tr), box-shadow var(--tr), color var(--tr);
+}
+.session-tap-btn:hover {
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.session-tap-btn.done {
+  background: linear-gradient(135deg, var(--ctp-green), var(--ctp-teal));
+  color: var(--ctp-crust);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ctp-green) 45%, transparent);
+}
+
+/* ── Session progress bar — accent idle, green done ── */
+.session-prog-fill {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.session-prog-fill.done-fill {
+  background: linear-gradient(90deg, var(--ctp-green), var(--ctp-teal));
+}
+
+/* ── Done icon ── */
+.session-done-icon { color: var(--ctp-green); }
+
+/* ── Session info boxes ── */
+.session-hadith {
+  background: color-mix(in srgb, var(--ctp-yellow) 12%, transparent);
+  border-color: var(--ctp-yellow);
+  color: var(--text2);
+}
+.session-virtue {
+  background: color-mix(in srgb, var(--ctp-green) 10%, transparent);
+  border-color: var(--ctp-green);
+  color: var(--text2);
+}
+
+/* ── Badges ── */
+.badge-repeat {
+  background: color-mix(in srgb, var(--ctp-blue) 15%, transparent);
+  border-color: var(--ctp-blue);
+  color: var(--ctp-blue);
+}
+.badge-sahih {
+  background: color-mix(in srgb, var(--ctp-green) 12%, transparent);
+  border-color: var(--ctp-green);
+  color: var(--ctp-green);
+}
+.badge-hasan {
+  background: color-mix(in srgb, var(--ctp-blue) 12%, transparent);
+  border-color: var(--ctp-blue);
+  color: var(--ctp-blue);
+}
+.badge-daif {
+  background: color-mix(in srgb, var(--ctp-red) 12%, transparent);
+  border-color: var(--ctp-red);
+  color: var(--ctp-red);
+}
+.badge-tag {
+  background: color-mix(in srgb, var(--ctp-mauve) 10%, transparent);
+  border-color: var(--ctp-mauve);
+  color: var(--ctp-mauve);
+}
+
+/* ── Filter chips ── */
+.filter-chip.on {
+  background: var(--glow);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Session header/footer ── */
+.session-header,
+.session-footer {
+  border-color: var(--border);
+}
+
+/* ── Next button — same accent as the tap button ── */
+.btn-session-next {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: var(--on-accent);
+  border: none;
+  transition: background var(--tr), box-shadow var(--tr), color var(--tr);
+}
+.btn-session-next.done {
+  background: linear-gradient(135deg, var(--ctp-green), var(--ctp-teal));
+  color: var(--ctp-crust);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--ctp-green) 40%, transparent);
+}
+.btn-session-skip {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text2);
+}
+.btn-session-skip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Light mode tweaks ── */
+.light .session-tap-btn,
+.light .btn-session-next {
+  color: var(--on-accent);
+}
+.light .badge-repeat,
+.light .badge-sahih,
+.light .badge-hasan,
+.light .badge-daif,
+.light .badge-tag {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Session overlay — overrides components.css
+   ═══════════════════════════════════════════════════════════ */
+.session-overlay .session-situation { color: var(--accent); }
+
+.session-overlay .session-hadith {
+  background: color-mix(in srgb, var(--ctp-yellow) 10%, transparent);
+  border-color: color-mix(in srgb, var(--ctp-yellow) 55%, transparent);
+}
+.session-overlay .session-virtue {
+  background: color-mix(in srgb, var(--ctp-green) 10%, transparent);
+  border-color: color-mix(in srgb, var(--ctp-green) 55%, transparent);
+}
+
+.session-overlay .session-tap-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: var(--on-accent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.session-overlay .session-tap-btn:active {
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.session-overlay .session-tap-btn.done {
+  background: linear-gradient(135deg, var(--ctp-green), var(--ctp-teal));
+  color: var(--ctp-crust);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ctp-green) 40%, transparent);
+}
+
+.session-overlay .session-prog-fill {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.session-overlay .session-prog-fill.done-fill {
+  background: linear-gradient(90deg, var(--ctp-green), var(--ctp-teal));
+}
+
+.session-overlay .btn-session-next {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: var(--on-accent);
+}
+.session-overlay .btn-session-next.done {
+  background: linear-gradient(135deg, var(--ctp-green), var(--ctp-teal));
+  color: var(--ctp-crust);
+}
+
+/* ── Mobile: actions drop below content, touch targets preserved ── */
+@media (max-width: 480px) {
+  .adkar-card {
+    flex-wrap: wrap;
+    direction: ltr;
+    gap: 8px;
+    padding: 12px 14px;
+  }
+  .adkar-left {
+    order: 1;
+    flex: 1 1 100%;
+    direction: rtl;
+  }
+  .adkar-actions {
+    order: 2;
+    flex: 0 0 auto;
+    margin-inline-start: auto;
+  }
+  .adkar-meta {
+    order: 3;
+    flex-direction: row;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+  }
+  .adkar-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+@media (pointer: coarse) {
+  .adkar-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .adkar-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.chip-count{
+display:inline-block;
+margin-inline-start:6px;
+padding:0 6px;
+border-radius:9px;
+background:var(--accent);
+color:var(--on-accent);
+font-size:10px;
+font-weight:700;
+line-height:16px;
+vertical-align:middle;
+}

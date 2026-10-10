@@ -1,0 +1,392 @@
+/* FILE: css/base.css — clean rebuild, all comments verified */
+
+/* ═══════════════════════════════════════════════════════════
+Self-hosted fonts — Amiri (Arabic) + Tajawal (UI)
+═══════════════════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Amiri-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/Amiri-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Tajawal-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/Tajawal-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/Tajawal-Bold.woff2') format('woff2');
+}
+
+:root {
+  /* ─── Catppuccin Mocha palette ─── */
+  --ctp-rose:     #f38ba8;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink:     #f5c2e7;
+  --ctp-mauve:    #cba6f7;
+  --ctp-red:      #f38ba8;
+  --ctp-maroon:   #eba0ac;
+  --ctp-peach:    #fab387;
+  --ctp-yellow:   #f9e2af;
+  --ctp-green:    #a6e3a1;
+  --ctp-teal:     #94e2d5;
+  --ctp-sky:      #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue:     #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text:     #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base:     #1e1e2e;
+  --ctp-mantle:   #181825;
+  --ctp-crust:    #11111b;
+
+  /* ─── Surfaces (Mocha) ─── */
+  --bg:      #181825;
+  --surface: #1e1e2e;
+  --surface2:#313244;
+  --surface3:#45475a;
+  --border:  #585b70;
+
+  /* ─── Accent (default gold — variants below override) ─── */
+  --accent:  #c9a84c;
+  --accent2: #e8c97a;
+  --glow:    rgba(201, 168, 76, .15);
+  --on-accent: #1a1200;
+
+  /* ─── Text ─── */
+  --text:  #cdd6f4;
+  --text2: #bac2de;
+  --text3: #a6adc8;
+
+  /* ─── Semantic ── */
+  --green:  #a6e3a1;
+  --red:    #f38ba8;
+  --blue:   #89b4fa;
+  --orange: #fab387;
+
+  /* ─── Cycle bar ─── */
+  --cycle-night:  #89b4fa;
+  --cycle-day:    #fab387;
+  --cycle-teal:   #94e2d5;
+  --cycle-mauve:  #cba6f7;
+  --cycle-yellow: #f9e2af;
+  --cycle-label:     rgba(255, 255, 255, .85);
+  --cycle-label-dim: rgba(255, 255, 255, .55);
+
+  /* ─── Shape & motion ─── */
+  --sh: 0 8px 32px rgba(0, 0, 0, .4);
+  --tr: .22s cubic-bezier(.4, 0, .2, 1);
+
+  /* ─── Radius ─── */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-pill: 9999px;
+  --r:  16px;
+  --rs: 10px;
+
+  /* ─── Type scale ─── */
+  --fs-xs:  11px;
+  --fs-sm:  12px;
+  --fs-md:  14px;
+  --fs-lg:  16px;
+  --fs-xl:  20px;
+  --fs-2xl: 26px;
+  --fs-3xl: 34px;
+
+  /* ─── Spacing ─── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+}
+
+.light {
+  /* ─── Catppuccin Latte palette ─── */
+  --ctp-rose:     #d20f39;
+  --ctp-flamingo: #dd7878;
+  --ctp-pink:     #ea76cb;
+  --ctp-mauve:    #8839ef;
+  --ctp-red:      #d20f39;
+  --ctp-maroon:   #e64553;
+  --ctp-peach:    #fe640b;
+  --ctp-yellow:   #df8e1d;
+  --ctp-green:    #40a02b;
+  --ctp-teal:     #179299;
+  --ctp-sky:      #04a5e5;
+  --ctp-sapphire: #209fb5;
+  --ctp-blue:     #1e66f5;
+  --ctp-lavender: #7287fd;
+  --ctp-text:     #4c4f69;
+  --ctp-subtext1: #5c5f77;
+  --ctp-subtext0: #6c6f85;
+  --ctp-overlay2: #7c7f93;
+  --ctp-overlay1: #8c8fa1;
+  --ctp-overlay0: #9ca0b0;
+  --ctp-surface2: #acb0be;
+  --ctp-surface1: #bcc0cc;
+  --ctp-surface0: #ccd0da;
+  --ctp-base:     #eff1f5;
+  --ctp-mantle:   #e6e9ef;
+  --ctp-crust:    #dce0e8;
+
+  /* ─── Surfaces (Latte) ─── */
+  --bg:      #e6e9ef;
+  --surface: #eff1f5;
+  --surface2:#ccd0da;
+  --surface3:#bcc0cc;
+  --border:  #acb0be;
+
+  /* ─── Accent (default — variants below override) ─── */
+  --accent:  #df8e1d;
+  --accent2: #fe640b;
+  --glow:    rgba(223, 142, 29, .15);
+  --on-accent: #1a1200;
+
+  /* ─── Text ─── */
+  --text:  #4c4f69;
+  --text2: #5c5f77;
+  --text3: #6c6f85;
+
+  /* ─── Semantic ─── */
+  --green:  #40a02b;
+  --red:    #d20f39;
+  --blue:   #1e66f5;
+  --orange: #fe640b;
+
+  /* ─── Cycle bar ─── */
+  --cycle-night:  #1e66f5;
+  --cycle-day:    #fe640b;
+  --cycle-teal:   #179299;
+  --cycle-mauve:  #8839ef;
+  --cycle-yellow: #df8e1d;
+  --cycle-label:     rgba(44, 48, 66, .85);
+  --cycle-label-dim: rgba(44, 48, 66, .60);
+
+  /* ─── Shape & motion ─── */
+  --sh: 0 8px 32px rgba(0, 0, 0, .08);
+}
+
+/* ─── Light mode card lift ─── */
+.light .adkar-card,
+.light .cat-card,
+.light .book-card,
+.light .continue-card,
+.light .home-feature-card,
+.light .home-today-card,
+.light .asma-card,
+.light .hijri-cell,
+.light .quote-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .04), 0 4px 12px rgba(0, 0, 0, .03);
+}
+
+/* ── Mobile baseline ── */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  min-height: 100dvh;
+  transition: background var(--tr), color var(--tr);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+button {
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+header {
+  padding-left: calc(20px + env(safe-area-inset-left));
+  padding-right: calc(20px + env(safe-area-inset-right));
+}
+.toast {
+  bottom: calc(28px + env(safe-area-inset-bottom));
+}
+.session-footer {
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+}
+
+/* ═══════════════════════════════════════════════════════════
+Scrollbars & selection
+═══════════════════════════════════════════════════════════ */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border); }
+* { scrollbar-width: thin; scrollbar-color: var(--surface3) var(--bg); }
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ═══════════════════════════════════════════════════════════
+Icons
+═══════════════════════════════════════════════════════════ */
+svg[aria-hidden="true"] {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.icon-filled use { fill: currentColor; }
+.icon-rotate-90  { transform: rotate(90deg); }
+.icon-rotate-180 { transform: rotate(180deg); }
+.icon-rotate-270 { transform: rotate(270deg); }
+.icon-spin { animation: icon-spin 1s linear infinite; }
+@keyframes icon-spin { to { transform: rotate(360deg); } }
+
+/* ═══════════════════════════════════════════════════════════
+Accent variants — body[data-accent="gold|peach|blue|green|mauve"]
+═══════════════════════════════════════════════════════════ */
+body[data-accent="gold"] {
+  --accent: #c9a84c;
+  --accent2: #e8c97a;
+  --glow: rgba(201, 168, 76, .16);
+  --on-accent: #1a1200;
+}
+body.light[data-accent="gold"] {
+  --accent: #df8e1d;
+  --accent2: #fe640b;
+  --glow: rgba(223, 142, 29, .16);
+  --on-accent: #1a1200;
+}
+body[data-accent="peach"] {
+  --accent: #fab387;
+  --accent2: #f5bde6;
+  --glow: rgba(250, 179, 135, .16);
+  --on-accent: #1a1200;
+}
+body.light[data-accent="peach"] {
+  --accent: #fe640b;
+  --accent2: #df8e1d;
+  --glow: rgba(254, 100, 11, .16);
+  --on-accent: #1a1200;
+}
+body[data-accent="blue"] {
+  --accent: #89b4fa;
+  --accent2: #89dceb;
+  --glow: rgba(137, 180, 250, .16);
+  --on-accent: #1a1200;
+}
+body.light[data-accent="blue"] {
+  --accent: #1e66f5;
+  --accent2: #04a5e5;
+  --glow: rgba(30, 102, 245, .14);
+  --on-accent: #ffffff;
+}
+body[data-accent="green"] {
+  --accent: #a6e3a1;
+  --accent2: #94e2d5;
+  --glow: rgba(166, 227, 161, .16);
+  --on-accent: #1a1200;
+}
+body.light[data-accent="green"] {
+  --accent: #40a02b;
+  --accent2: #179299;
+  --glow: rgba(64, 160, 43, .14);
+  --on-accent: #ffffff;
+}
+body[data-accent="mauve"] {
+  --accent: #cba6f7;
+  --accent2: #f5bde6;
+  --glow: rgba(203, 166, 247, .16);
+  --on-accent: #1a1200;
+}
+body.light[data-accent="mauve"] {
+  --accent: #8839ef;
+  --accent2: #ea76cb;
+  --glow: rgba(136, 57, 239, .14);
+  --on-accent: #ffffff;
+}
+
+/* Keep text readable on accent-filled buttons */
+body[data-accent] .btn-add,
+body[data-accent] .btn-session,
+body[data-accent] .btn-session-next,
+body[data-accent] .btn-save,
+body[data-accent] .session-tap-btn,
+body[data-accent] .btn-newcat:hover,
+body[data-accent] .cbtn:hover,
+body[data-accent] .cbtn:active,
+body[data-accent] .quote-lang-btn.on,
+body[data-accent] .cycle-lang-btn.on,
+body[data-accent] .forbidden-lang-btn.on,
+body[data-accent] .tasbih-chip.on,
+body[data-accent] .tasbih-tap-btn,
+body[data-accent] .flash-btn.reveal {
+  color: var(--on-accent);
+}
+body[data-accent] .hijri-cell.today .hijri-day-num,
+body[data-accent] .hijri-cell.today .hijri-day-greg {
+  color: var(--on-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════
+Settings modal extras
+═══════════════════════════════════════════════════════════ */
+#ov-settings .filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+}
+.accent-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25);
+}
+.dot-gold  { background: #c9a84c; }
+.dot-peach { background: #fab387; }
+.dot-blue  { background: #89b4fa; }
+.dot-green { background: #a6e3a1; }
+.dot-mauve { background: #cba6f7; }
+body.light .dot-gold  { background: #df8e1d; }
+body.light .dot-peach { background: #fe640b; }
+body.light .dot-blue  { background: #1e66f5; }
+body.light .dot-green { background: #40a02b; }
+body.light .dot-mauve { background: #8839ef; }
+#ov-settings .mf { justify-content: center; }
+#ov-settings .btn-save {
+  border-radius: var(--radius-pill);
+  padding: 10px 36px;
+  min-width: 150px;
+  font-size: 14px;
+}
